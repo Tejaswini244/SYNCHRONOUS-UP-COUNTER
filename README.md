@@ -30,17 +30,81 @@ However, the remaining flip-flops should be made ready to toggle only when all l
 
 /* write all the steps invloved */
 
+1.Write the detailed procedure here
+
+2.Type the program in Quartus software.
+
+3.Compile and run the program.
+
+4.Generate the RTL schematic and save the logic diagram.
+
+5.Create nodes for inputs and outputs to generate the timing diagram.
+
+6.For different input combinations generate the timing diagram.
+
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
-*/
+module ex11(out,clk,rst);
 
-**RTL LOGIC UP COUNTER**
+input clk,rst;
 
-**TIMING DIAGRAM FOR IP COUNTER**
+output reg [3:0]out;
+
+always @ (posedge clk)
+
+begin
+
+   if(rst)
+   
+     out<=0;
+     
+   else 
+   
+     out <= out+1;
+     
+end
+
+endmodule
+
+Developed by:TEJASWINI R
+
+RegisterNumber:24009408
+
+**RTL**
+
+![EXP 11 UC](https://github.com/user-attachments/assets/6f4ede81-f587-4418-87bf-badb1682f899)
 
 **TRUTH TABLE**
 
-**RESULTS**
+### 4-bit Synchronous Up Counter Truth Table:
+
+| **Clock (CLK)** | **Q3** | **Q2** | **Q1** | **Q0** | **Next State (Q3 Q2 Q1 Q0)** |
+|-----------------|--------|--------|--------|--------|----------------------------|
+|        0        |   0    |   0    |   0    |   0    |           0000             |
+|        1        |   0    |   0    |   0    |   0    |           0001             |
+|        1        |   0    |   0    |   0    |   1    |           0010             |
+|        1        |   0    |   0    |   1    |   0    |           0011             |
+|        1        |   0    |   0    |   1    |   1    |           0100             |
+|        1        |   0    |   1    |   0    |   0    |           0101             |
+|        1        |   0    |   1    |   0    |   1    |           0110             |
+|        1        |   0    |   1    |   1    |   0    |           0111             |
+|        1        |   0    |   1    |   1    |   1    |           1000             |
+|        1        |   1    |   0    |   0    |   0    |           1001             |
+|        1        |   1    |   0    |   0    |   1    |           1010             |
+|        1        |   1    |   0    |   1    |   0    |           1011             |
+|        1        |   1    |   0    |   1    |   1    |           1100             |
+|        1        |   1    |   1    |   0    |   0    |           1101             |
+|        1        |   1    |   1    |   0    |   1    |           1110             |
+|        1        |   1    |   1    |   1    |   0    |           1111             |
+|        1        |   1    |   1    |   1    |   1    |           0000             |
+
+
+**Output**
+
+![EXP 11 UC OUT](https://github.com/user-attachments/assets/786e3a23-c3e1-4460-b112-d5caf7efb9cf)
+
+**RESULT**
+
+4-bit synchronous up counter is verified.
